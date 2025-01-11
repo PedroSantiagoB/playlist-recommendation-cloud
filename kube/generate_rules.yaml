@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: generate-rules
+  name: ml-container
   namespace: pedrobeltrao
 spec:
   template:
     metadata:
       labels:
-        app: generate-rules
+        app: ml-container
     spec:
       containers:
-      - name: generate-rules
+      - name: ml-container
         image: pedrosantiago7/ml-container:01
         volumeMounts:
         - name: data-volume
