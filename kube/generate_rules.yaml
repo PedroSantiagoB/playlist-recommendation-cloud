@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: generate-rules
+  namespace: pedrobeltrao
+spec:
+  template:
+    metadata:
+      labels:
+        app: generate-rules
+    spec:
+      containers:
+      - name: generate-rules
+        image: pedrosantiago7/ml-container:01
+        volumeMounts:
+        - name: data-volume
+          mountPath: /mnt/data
+      restartPolicy: Never
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: project2-pv2-pedrobeltrao-claim
+  backoffLimit: 1
