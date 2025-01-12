@@ -5,7 +5,7 @@ metadata:
   namespace: pedrobeltrao
 spec:
   selector:
-    app: api-server
+    app: server-container
   ports:
     - protocol: TCP
       port: 80

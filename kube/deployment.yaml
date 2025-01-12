@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-container
+  namespace: pedrobeltrao
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-container
+  template:
+    metadata:
+      labels:
+        app: server-container
+    spec:
+      containers:
+      - name: server-container
+        image: pedrosantiago7/server-container:03
+        ports:
+        - containerPort: 52054
+        volumeMounts:
+        - name: data-volume
+          mountPath: /mnt/data
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: project2-pv2-pedrobeltrao-claim
