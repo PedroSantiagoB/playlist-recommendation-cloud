@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-model_path = "association_rules.pickle"
+model_path = "../mnt/data/association_rules.pickle"
 app.model = pickle.load(open(model_path, "rb"))
 app.model_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
