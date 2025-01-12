@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: ml-container
-        image: pedrosantiago7/ml-container:01
+        image: pedrosantiago7/ml-container:03
         volumeMounts:
         - name: data-volume
           mountPath: /mnt/data
