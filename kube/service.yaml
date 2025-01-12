@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-container
+  namespace: pedrobeltrao
+spec:
+  selector:
+    app: api-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 52054
+  clusterIP: None
