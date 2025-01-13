@@ -4,4 +4,4 @@ metadata:
   name: dataset-config
   namespace: pedrobeltrao
 data:
-  dataset_path: "../mnt/shared/2023_spotify_ds1.csv"
+  dataset_path: "../mnt/data/2023_spotify_ds1.csv"
