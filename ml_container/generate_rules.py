@@ -1,8 +1,11 @@
 from fpgrowth_py import fpgrowth
 import pandas as pd
 import pickle
+import os
 
-df = pd.read_csv("../mnt/data/2023_spotify_ds1.csv")
+dataset_path = os.getenv('DATASET_PATH')
+
+df = pd.read_csv(dataset_path)
 
 itemSetList = df.groupby("pid")["track_name"].apply(list).tolist()
 

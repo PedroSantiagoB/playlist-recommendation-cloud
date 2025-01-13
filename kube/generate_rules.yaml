@@ -15,6 +15,12 @@ spec:
         volumeMounts:
         - name: data-volume
           mountPath: /mnt/data
+        env:
+        - name: DATASET_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: dataset-config
+              key: dataset_path
       restartPolicy: Never
       volumes:
       - name: data-volume
